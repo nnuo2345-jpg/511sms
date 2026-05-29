@@ -7,16 +7,12 @@
     <meta name="description" content="511SMS提供美国实卡接码服务，支持各类平台注册验证，稳定可靠，隐私保护，价格实惠。">
     <meta name="keywords" content="美国实卡接码,美国接码平台,511sms,美国手机号接码,美国验证码接收,海外接码平台,美国虚拟号码">
     
-    <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Animate.css CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #3498db;
@@ -38,17 +34,6 @@
             padding: 5rem 0;
             position: relative;
             overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-            opacity: 0.2;
         }
         
         .feature-icon {
@@ -136,34 +121,12 @@
             font-family: Georgia, serif;
         }
         
-        .platform-badge {
-            height: 40px;
-            margin: 10px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-        
-        .platform-badge:hover {
-            opacity: 1;
-        }
-        
         .cta-section {
             background-color: var(--secondary-color);
             color: white;
             padding: 4rem 0;
             position: relative;
             overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-            opacity: 0.1;
         }
         
         footer {
@@ -215,31 +178,35 @@
             font-size: 1rem;
             color: var(--dark-color);
         }
+        
         .platform-badge {
-    margin: 10px 15px;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
+            margin: 10px 15px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
 
-.platform-badge:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
+        .platform-badge:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* 体验保障：强制覆盖为小手手势 */
+        .custom-pointer {
+            cursor: pointer !important;
+        }
     </style>
 </head>
 <body>
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/你的WhatsApp号码" class="floating-whatsapp animate__animated animate__bounceIn">
+    <div onclick="redirectWhatsApp()" class="floating-whatsapp animate__animated animate__bounceIn custom-pointer">
         <i class="fab fa-whatsapp"></i>
-    </a>
+    </div>
     
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <span class="navbar-brand custom-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <i class="fas fa-sms me-2"></i>
                 <span class="fw-bold">511SMS</span>
-            </a>
+            </span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -252,7 +219,7 @@
                         <a class="nav-link" href="#pricing">价格套餐</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">使用教程</a>
+                        <a class="nav-link" href="#how-it-works">使用指南</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#testimonials">用户评价</a>
@@ -261,14 +228,13 @@
                         <a class="nav-link" href="#faq">常见问题</a>
                     </li>
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <a class="btn btn-primary btn-sm" href="https://daputao.me/register">立即注册</a>
+                        <button class="btn btn-primary btn-sm custom-pointer" onclick="redirectSecure('register')">立即注册</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     
-    <!-- Hero Section -->
     <section class="hero-section text-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
@@ -276,7 +242,7 @@
                     <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">美国实卡接码平台</h1>
                     <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">511SMS提供真实美国手机号码，支持各类平台注册验证，稳定可靠，隐私保护，价格实惠</p>
                     <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp animate__delay-2s">
-                        <a href="https://daputao.me/register" class="btn btn-light btn-lg px-4">免费试用</a>
+                        <button onclick="redirectSecure('register')" class="btn btn-light btn-lg px-4 custom-pointer">免费试用</button>
                         <a href="#how-it-works" class="btn btn-outline-light btn-lg px-4">使用教程</a>
                     </div>
                 </div>
@@ -284,7 +250,6 @@
         </div>
     </section>
     
-    <!-- Stats Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row text-center">
@@ -308,7 +273,6 @@
         </div>
     </section>
     
-    <!-- Features Section -->
     <section id="features" class="py-5">
         <div class="container">
             <div class="row justify-content-center mb-5">
@@ -377,372 +341,5 @@
         </div>
     </section>
     
-    <!-- Supported Platforms -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-8 text-center">
-                    <h3 class="fw-bold mb-3">支持所有主流平台</h3>
-                    <p class="text-muted">我们的美国号码已被验证可用于以下平台</p>
-                </div>
-            </div>
-            
-            <div class="row justify-content-center">
-<div class="col-12 text-center">
-    <i class="fab fa-google fa-2x platform-badge" style="color: #4285F4" title="Google"></i>
-    <i class="fab fa-facebook fa-2x platform-badge" style="color: #1877F2" title="Facebook"></i>
-    <i class="fab fa-twitter fa-2x platform-badge" style="color: #1DA1F2" title="Twitter"></i>
-    <i class="fab fa-whatsapp fa-2x platform-badge" style="color: #25D366" title="WhatsApp"></i>
-    <i class="fab fa-amazon fa-2x platform-badge" style="color: #FF9900" title="Amazon"></i>
-    <i class="fab fa-paypal fa-2x platform-badge" style="color: #00457C" title="PayPal"></i>
-    <i class="fab fa-tiktok fa-2x platform-badge" style="color: #000000" title="TikTok"></i>
-    <i class="fab fa-telegram fa-2x platform-badge" style="color: #26A5E4" title="Telegram"></i>
-</div>
-            </div>
-            
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-8 text-center">
-                    <p class="text-muted">以及其他数百个平台...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="fw-bold mb-3">简单三步，轻松接码</h2>
-                    <p class="lead text-muted">使用511SMS美国实卡接码平台的完整流程</p>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card border-0 bg-transparent">
-                        <div class="card-body text-center">
-                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                                <h2 class="mb-0">1</h2>
-                            </div>
-                            <h4 class="mb-3">注册并充值</h4>
-                            <p class="text-muted">创建您的511SMS账户并充值余额，支持支付宝、微信、PayPal等多种支付方式</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="card border-0 bg-transparent">
-                        <div class="card-body text-center">
-                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                                <h2 class="mb-0">2</h2>
-                            </div>
-                            <h4 class="mb-3">获取美国号码</h4>
-                            <p class="text-muted">在控制面板选择需要的号码，支持按运营商、地区筛选，一键获取专属美国号码</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="card border-0 bg-transparent">
-                        <div class="card-body text-center">
-                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                                <h2 class="mb-0">3</h2>
-                            </div>
-                            <h4 class="mb-3">接收验证码</h4>
-                            <p class="text-muted">在目标平台使用获取的美国号码，验证码将自动显示在您的控制面板中</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="fw-bold mb-3">用户真实评价</h2>
-                    <p class="lead text-muted">听听我们的客户怎么说</p>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="testimonial-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="50" alt="用户头像">
-                            <div>
-                                <h6 class="mb-0">张先生</h6>
-                                <small class="text-muted">跨境电商店主</small>
-                            </div>
-                        </div>
-                        <p class="mb-0">"使用511SMS的美国号码注册亚马逊店铺，通过率非常高，客服响应也很快，解决了我的大问题！"</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="testimonial-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="50" alt="用户头像">
-                            <div>
-                                <h6 class="mb-0">李女士</h6>
-                                <small class="text-muted">留学生</small>
-                            </div>
-                        </div>
-                        <p class="mb-0">"在国外需要美国号码注册各种APP，511SMS的价格实惠，号码质量也很好，强烈推荐！"</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="testimonial-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-3" width="50" alt="用户头像">
-                            <div>
-                                <h6 class="mb-0">王经理</h6>
-                                <small class="text-muted">市场营销主管</small>
-                            </div>
-                        </div>
-                        <p class="mb-0">"我们公司需要大量美国号码进行市场测试，511SMS的API接口稳定可靠，大大提高了我们的工作效率。"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FAQ Section -->
-    <section id="faq" class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="fw-bold mb-3">常见问题</h2>
-                    <p class="lead text-muted">您可能关心的问题解答</p>
-                </div>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    511SMS的美国号码是真实的吗？
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    是的，511SMS提供的所有美国号码均为实体SIM卡号码，非虚拟号段，通过率高达99%。我们与美国多家运营商直接合作，确保号码的真实性和稳定性。
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    一个号码可以使用多久？
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    根据您购买的套餐不同，号码保留时间从24小时到7天不等。企业套餐用户还可以申请延长保留时间。使用期间您可以随时释放号码或申请更换新号码。
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    支持哪些支付方式？
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    我们支持支付宝、微信支付、PayPal、信用卡(Visa/Mastercard)等多种支付方式。企业用户还可以申请银行转账付款。
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    如何保证我的隐私安全？
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    511SMS采用银行级数据加密技术，所有短信内容在显示后24小时内自动清除，不会保留任何用户使用记录。我们也不会将号码重复分配给其他用户使用。
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-                                    如果收不到验证码怎么办？
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    如果5分钟内未收到验证码，您可以尝试重新发送或更换号码。如问题持续，请联系我们的24小时在线客服，我们将第一时间为您解决问题或退款。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section id="register" class="cta-section text-center">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="display-5 fw-bold text-white mb-4">立即注册511SMS，获取您的专属美国号码</h2>
-                    <p class="lead text-white mb-5">现在注册即可获得5次免费接码体验</p>
-                    <form class="row g-3 justify-content-center">
-                        <div class="col-md-8">
-                            <input type="email" class="form-control form-control-lg" placeholder="输入您的邮箱地址">
-                        </div>
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-primary btn-lg w-100">免费试用</button>
-                        </div>
-                    </form>
-                    <p class="text-white-50 mt-3">点击注册即表示您同意我们的<a href="#" class="text-white">服务条款</a>和<a href="#" class="text-white">隐私政策</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h5 class="text-white mb-4"><i class="fas fa-sms me-2"></i>511SMS</h5>
-                    <p class="text-white-50">提供最稳定可靠的美国实卡接码服务，助力您的业务全球化发展。</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <h6 class="text-white mb-4">快速链接</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">首页</a></li>
-                        <li class="mb-2"><a href="#features" class="text-white-50">功能特点</a></li>
-                        <li class="mb-2"><a href="#pricing" class="text-white-50">价格套餐</a></li>
-                        <li class="mb-2"><a href="#how-it-works" class="text-white-50">使用教程</a></li>
-                        <li class="mb-2"><a href="#faq" class="text-white-50">常见问题</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <h6 class="text-white mb-4">服务支持</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">帮助中心</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">API文档</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">状态监控</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">联系我们</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">提交工单</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <h6 class="text-white mb-4">法律信息</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">服务条款</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">隐私政策</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">退款政策</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">使用规范</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">合规声明</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2">
-                    <h6 class="text-white mb-4">联系我们</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@511sms.com</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</li>
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Business Ave, New York, USA</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <hr class="my-4 bg-secondary">
-            
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="text-white-50 mb-0">© 2023 511SMS. 保留所有权利。</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="text-white-50 mb-0">Designed with <i class="fas fa-heart text-danger"></i> by 511SMS Team</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- CountUp JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        $(document).ready(function() {
-            // Smooth scrolling for anchor links
-            $('a[href*="#"]').on('click', function(e) {
-                e.preventDefault();
-                
-                $('html, body').animate(
-                    {
-                        scrollTop: $($(this).attr('href')).offset().top - 70,
-                    },
-                    500,
-                    'linear'
-                );
-            });
-            
-            // Count up animation
-            $('.count-up').counterUp({
-                delay: 10,
-                time: 1000
-            });
-            
-            // Navbar background change on scroll
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $('.navbar').addClass('bg-dark shadow');
-                } else {
-                    $('.navbar').removeClass('bg-dark shadow');
-                }
-            });
-            
-            // Form submission
-            $('form').submit(function(e) {
-                e.preventDefault();
-                window.location="https://daputao.me/register"
-            });
-            
-            // WhatsApp button click
-            $('.floating-whatsapp').click(function(e) {
-                e.preventDefault();
-                alert('正在跳转至WhatsApp客服，请稍候...');
-                window.location.href = $(this).attr('href');
-            });
-        });
-    </script>
-</body>
-</html>
